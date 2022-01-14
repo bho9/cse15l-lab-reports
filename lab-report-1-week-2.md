@@ -153,15 +153,57 @@ Using SSH keys will make this easier as the `ssh` command can use the key pair t
     ssh-add <keyname>
     ```
 
-    Without the `.pub` because this is the private key. If successful it should show you an RSA code or something that looks like gibberish. If not, it's likely the ssh-agent isn't running, so look up how to get it running for your operating system. You can check if it's added by typing:
+    **Without** the `.pub` because this is the private key. If successful it should show you an RSA code or something that looks like gibberish. If not, it's likely the ssh-agent isn't running, so look up how to get it running for your operating system. You can check if it's added by typing:
 
     ```
     ssh-add -l
     ```
 
-    If it's not empty you're good. 
+    If something like this shows up, then you're good:
 
-Once this is complete you should be able to use `ssh` or `scp` without your password.
+    ![Image](/lab1week2ss/Figure7.png)
+
+Once this is complete you should be able to use `ssh` or `scp` without your password. **Note:** This should only work on those computers where the ssh-agent has your private key.
 
 ## Optimizing Remote Running
 
+Now that it's much easier to log in and work on the server, let's try a few things.
+
+1. You can run a command on the server right after ssh-ing and then exit after the command has been executed - all in one line. Simply add quotes to the server commands like this:
+
+    ```
+    ssh cs15lwi22zzz@ieng6.ucsd.edu "pwd"
+    ```
+
+    Where `pwd` means "print working directory" which is simply printing the path for the directory (in this case, the home directory). It should look something like this:
+
+    ![Image](/lab1week2ss/Figure8.png)
+
+2. You can copy multiple files to the home directory or a directory of your choosing without having to type the same command multiple times for each file. For example, here's how to copy two `.txt` files into the home directory of the server:
+
+    ```
+    scp hello.txt hello2.txt cs15lwi22zzz@ieng6.ucsd.edu:~/<optionally add directory paths here>
+    ```
+
+3. How about compiling and running a `.java` file on the server all in one line? Again, just use quotation marks and simple add a semicolon inside to separate multiple commands. Let's assume you have a `WhoAmI.java` file in your home directory, where the file contains:
+
+    ```
+    public class WhoAmI {
+        public static void main(String[] args) 
+        {
+            System.out.println(System.getProperty("user.name"));
+        }
+    }
+    ```
+
+    Then you just type in the terminal:
+
+    ```
+    ssh cs15lwi22zzz@ieng6.ucsd.edu "javac WhoAmI.java; java WhoAmI"
+    ```
+
+    All in one line, which should print your username and then exits the server:
+
+    ![Image](/lab1week2ss/Figure9.png)
+
+A handy trick to know is that if you want to get the last, or any other previous commands recently used in the terminal, just press the up-arrow on your keyboard. As you can see, all of these commands do something in the server without requiring you to enter the password every time, and they all simplify having to type multiple commands in the terminal. There are other ways to easily run remote code/commands but these are a few examples.
