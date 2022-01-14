@@ -16,3 +16,5 @@ Second line added 1/13/22 10:52AM.
 
 * Eggs
 * Milk
+
+[Lab Report 1](lab-report-1-week-2.html)
