@@ -16,6 +16,7 @@ The first step to be able to log into the course-specific account on `ieng6` is 
 Some terms to know beforehand:
 * Client: The computer you are using right now to read this.
 * Server: The remote computer you are going to be connecting to that's stored in a remote location.
+
 1. If you're on Windows, make sure you have OpenSSH installed. Follow this tutorial if it is not:
 [Install OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). After that, you must find your course-specific `ieng6` account for CSE15L here: [https://sdacs.ucsd.edu/~icc/index.php](https://sdacs.ucsd.edu/~icc/index.php). You might need to change your password for this to work so change it in that website and wait for about 15 or so minutes for the changes to go through.
 
@@ -26,6 +27,7 @@ Some terms to know beforehand:
     where the `zzz` is replaced by your specific account characters.
 
 2.  Open a terminal in VSCode by clicking `Terminal > New Terminal` located on the top. Type in the terminal:
+
     ```
     ssh cs15lwi22zzz@ieng6.ucsd.edu
     ```
