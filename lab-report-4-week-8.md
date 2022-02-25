@@ -14,27 +14,33 @@ This is how I turned it into a test.
 
 ## Snippet 1
 My implementation result:
+
 ![Image](lab4week8ss/testSnippet1mine.png)
 
 Other implementation result:
+
 ![Image](lab4week8ss/testSnippet1other.png)
 
 ---
 
 ## Snippet 2
 My implementation result:
+
 ![Image](lab4week8ss/testSnippet2mine.png)
 
 Other implementation result:
+
 ![Image](lab4week8ss/testSnippet2other.png)
 
 ---
 
 ## Snippet 3
 My implementation result:
+
 ![Image](lab4week8ss/testSnippet3mine.png)
 
 Other implementation result:
+
 ![Image](lab4week8ss/testSnippet3other.png)
 
 ---
